@@ -1,3 +1,3 @@
 # Backstage-NKG
-a POC with Backstage
-see Document-backstage for more details
+a POC with Backstage// 
+see Documentation-backstage for more details
