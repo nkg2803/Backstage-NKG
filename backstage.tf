@@ -23,13 +23,19 @@ resource "kubernetes_deployment" "backstage" {
       spec {
         container {
           name  = "backstage"
-          image = "roadiehq/community-backstage-image:latest"
+          image = "nkg2803/nkg-backstage-app:0.10"
 
           port {
             name           = "http"
             container_port = 7007
           }
 
+          env_from {
+            config_map_ref {
+              name = "postgres-configs"
+            }
+          }
+          
           env_from {
             secret_ref {
               name = "postgres-secrets"
