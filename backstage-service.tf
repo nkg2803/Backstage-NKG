@@ -7,9 +7,10 @@ resource "kubernetes_service" "backstage" {
   spec {
     port {
       name        = "http"
-      port        = 80
-      target_port = "http"
+      port        = 7007
+      #target_port = 80
     }
+    type = "LoadBalancer"
 
     selector = {
       app = "backstage"
